@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('telephone');
             $table->string('type');
             $table->text('message');
+            $table->boolean('traité')->default(false);
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
            
         });

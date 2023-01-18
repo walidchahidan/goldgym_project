@@ -1,0 +1,24 @@
+main{
+    background-image: url('../../img/photos/bach2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.signup{
+    margin-right:50px;
+}
+.getstarted{
+    color :white;
+}
+#lead{
+    color: rgb(192, 167, 27);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#signupbtn{
+    background-color:rgb(192, 167, 27);
+}
+.card{
+    
+}

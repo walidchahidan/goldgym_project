@@ -19,8 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('photo')->nullable();
             $table->date('date');
-            $table->dateTime('horaire');
-            // $table->foreignId('user_id')->constrained();  
+            $table->dateTime('horaire');             
             $table->timestamps();
         });
     }

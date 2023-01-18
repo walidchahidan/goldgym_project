@@ -15,4 +15,9 @@ class Abonnement extends Model
         'prix'
 
     ];
+
+    public function adherents()
+    {
+        return $this->hasMany(User::class);
+    }
 }

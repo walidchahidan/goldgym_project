@@ -1,0 +1,35 @@
+.GG{
+    width: 20%;
+    
+}
+.lists{
+    margin-top: 20px;
+   
+   
+}
+
+.lists>ul{
+    margin-bottom: 16px;
+    list-style-type: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+nav{
+    background-color: black;
+    /* background-image: url('/public/img/photos/gold.jpg'); */
+    
+}
+.btns{
+    margin: auto;
+    text-align:end;
+}
+.signupnav{
+    background-color: rgb(175, 150, 6);
+    color: black;
+    border: none;
+}.signinnav{
+    background-color: white;
+    color: black;
+}

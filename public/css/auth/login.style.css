@@ -1,0 +1,16 @@
+main{
+    background-image: url('../../img/photos/bach2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cardsignin{
+    width: 50%;
+}
+#lead{
+    color: rgb(192, 167, 27);
+    font-weight: 600;
+}
+#btnsignin{
+    background-color: rgb(192, 167, 27);
+    border: none;
+}

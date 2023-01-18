@@ -17,4 +17,14 @@ class Classe extends Model
         'horaire'
 
     ];
+
+    public function planning()
+    {
+        return $this->hasMany(Planning::class);
+    }
+    
+    public function session()
+    {
+        return $this->belongsToMany(User::class,'sessions');
+    }
 }
