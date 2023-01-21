@@ -37,8 +37,8 @@
                             <td>{{ $member->role }}</td>
                             
                             
-                            @if ($member->picture !== null)
-                                <td><img src="{{ asset($member->picture) }}" alt="{{ $member->name }}" width="50px">
+                            @if ($member->photo !== null)
+                                <td><img src="{{ asset($member->photo) }}" alt="{{ $member->name }}" width="50px">
                                 </td>
                             @else
                                 <td><img src="{{ asset('storage/images/users/user.png') }}"
@@ -96,14 +96,59 @@
                                                             <label class="form-label" for="role" >Role</label>
                                                           </div>
                                                     </div>  
+                                                    <div class="col-lg-6">
+                                                        <div class="form-outline mb-4">
+                                                          @error('password')
+                                                          <div class="alert alert-danger">{{$message}}</div>
+                                                        @enderror
+                                                            <input type="password" id="password" name="password" class="@error('password')
+                                                            is-invalid
+                                                        @enderror form-control form-control-lg" value="  {{ old('password', $member->password) }}"/>
+                                                            <label class="form-label" for="password" >password</label>
+                                                          </div>
+                                                    </div>  
                                                  
                         
                                                     <div class="col-12">
                                                         <div class="form-outline mb-4">
-                                                            <input type="file" id="picture" name="picture" class="form-control form-control-lg" accept="image/*" value="  {{ old('picture', $member->picture) }}"/>
-                                                            <label class="form-label" for="picture">Profile Picture</label>
+                                                            <input type="file" id="photo" name="photo" class="form-control form-control-lg" accept="image/*" value="  {{ old('photo', $member->photo) }}"/>
+                                                            <label class="form-label" for="picture">Profile Photo</label>
                                                           </div>
                                                     </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-outline mb-4">
+                                                          @error('telephone')
+                                                          <div class="alert alert-danger">{{$message}}</div>
+                                                        @enderror
+                                                            <input type="text" id="telephone" name="telephone" class="@error('telephone')
+                                                            is-invalid
+                                                        @enderror form-control form-control-lg" value="  {{ old('telephone', $member->telephone) }}"/>
+                                                            <label class="form-label" for="telephone" >Telphone</label>
+                                                          </div>
+                                                    </div> 
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-outline mb-4">
+                                                          @error('sport')
+                                                          <div class="alert alert-danger">{{$message}}</div>
+                                                        @enderror
+                                                        <select class="form-select @error('sport')
+                                                        is-invalid 
+                                                    @enderror form-control form-control-lg" value="  {{ old('sport', $member->sport) }}" id="floatingSelectGrid" aria-placeholder="Sport" name="sport">
+                                                            <option selected>Sport</option>
+                                                            <option value="1">Musculation</option>
+                                                            <option value="2">Boxing</option>
+                                                            <option value="3">Crossfit</option>
+                                                            <option value="4">Aerobic</option>
+                                                            <option value="5">Natation</option>
+                                                            <option value="6">Yoga</option>
+                                                          </select> 
+                                                         
+                                                            <label class="form-label" for="sport" >Sport</label>
+                                                          </div>
+                                                    </div> 
+
                                                 </div>
 
                                                 <div class="modal-footer">

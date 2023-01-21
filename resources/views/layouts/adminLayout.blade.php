@@ -10,13 +10,13 @@
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="img/icons/G.png" type="image/x-icon"/>
+	<link rel="shortcut icon" href="{{ asset('img/icons/G.png') }}" type="image/x-icon"/>
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
 	<title>GoldGym | @yield('title')</title>
 
-	<link href="css/app.css" rel="stylesheet">
+	<link href="{{asset('css/app.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 
@@ -29,7 +29,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle " ><img class="w-25" src="{{('img/logo/G-removebg.png')}}" alt=""> GoldGym</span>
+          <span class="align-middle " ><img class="w-25" src="{{asset('img/logo/G-removebg.png')}}" alt=""> GoldGym</span>
           
         </a>
 
@@ -38,20 +38,21 @@
 						Management
 					</li>
 
-					<li class="sidebar-item active">
+					<li class="sidebar-item {{request()->routeIs('adminpage.adminhome') ? 'active' : ''}}">
 						<a class="sidebar-link" href="{{route('adminpage.adminhome')}}">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					{{-- <li class="{{ (request()->is({{route('members.index')}})) ? 'sidebar-item active' : 'sidebar-item ' }}"> --}}
+					<li class="sidebar-item {{request()->routeIs('members.index') ? 'active' : ''}}">
 						<a class="sidebar-link" href="{{route('members.index')}}">
               <i class="align-middle" data-feather="users"></i> <span class="align-middle">List Members</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
+					<li class="sidebar-item {{request()->routeIs('members.create') ? 'active' : ''}}">
+						<a class="sidebar-link" href="{{route('members.create')}}">
               <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Add Member</span>
             </a>
 					</li>
@@ -269,7 +270,7 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="{{('img/avatars/walid_super.png')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Walid Chahidane</span>
+                <img src="{{asset('img/avatars/walid_super.png')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Walid Chahidane</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
@@ -320,7 +321,7 @@
 		</div>
 	</div>
 
-	<script src="js/app.js"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

@@ -23,8 +23,17 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required |confirmed',
         ]);
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $fileName = 'photo' . time() . '.' . $file->getClientOriginalExtension();
+
+            $pic = $request->file('photo')->storeAs('images/members', $fileName, 'public');
+            $validated['photo'] = 'storage/' . $pic;
+        }
+
         $validated['password'] = Hash::make($validated['password']);
         $user = User::create($validated);
+
         return redirect()->route('view.login');
     }
 

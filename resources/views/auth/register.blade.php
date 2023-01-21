@@ -42,7 +42,7 @@
 									<img src="img/logo/G2.png" alt="GG" class="img-fluid rounded-circle" width="132" height="132" />
 								</div>
 								
-								<form method="POST" action="{{route('register')}}">
+								<form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
 								@csrf
 									<div class="mb-3">
 										<label class="form-label" for="name">Name</label>
