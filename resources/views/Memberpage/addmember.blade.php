@@ -7,14 +7,14 @@
 @section('content')
     
 <section>
-    <div class="content ">
+    <div class="content bg-white  mx-5 mb-5 px-0 pt-0 pb-0" id="rl">
         <div class="row">
             
-            <div class="col-4 ">
+            <div class="col-4 " >
                 <img src="{{ asset('img/photos/addphoto.jpg') }}" alt="" width="100%"  class="picside">
             </div>
-            <div class="col-6">
-                <h1 class="mb-5 mx-4"> Add Member</h1>
+            <div class="col-6 " >
+                <h1 class="mb-5 ms-4 pt-3 pb-0"> Add Member</h1>
                 <form method="POST" action="{{ route('members.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group-lg mb-3">
@@ -49,12 +49,12 @@
                         
                         <select class="form-select mx-4 my-4" id="floatingSelectGrid" aria-placeholder="Sport" name="sport">
                           <option selected>Sport</option>
-                          <option value="1">Musculation</option>
-                          <option value="2">Boxing</option>
-                          <option value="3">Crossfit</option>
-                          <option value="4">Aerobic</option>
-                          <option value="5">Natation</option>
-                          <option value="6">Yoga</option>
+                          <option value="Musculation">Musculation</option>
+                          <option value="Boxing">Boxing</option>
+                          <option value="Crossfit">Crossfit</option>
+                          <option value="Aerobic">Aerobic</option>
+                          <option value="Natation">Natation</option>
+                          <option value="Yoga">Yoga</option>
                         </select>     
                 </div>
                 <div class="mb-3">

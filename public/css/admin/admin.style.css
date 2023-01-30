@@ -1,5 +1,16 @@
 .picside{
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    height: 77vh;
+    height: 83vh;
+}main{
+    background-image: url("../../img/photos/gold2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+nav{
+    background-color: #222E3C !important;
+}
+#rl{
+    border-radius: 30px;
 }

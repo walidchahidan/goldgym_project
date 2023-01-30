@@ -47,7 +47,7 @@
 					{{-- <li class="{{ (request()->is({{route('members.index')}})) ? 'sidebar-item active' : 'sidebar-item ' }}"> --}}
 					<li class="sidebar-item {{request()->routeIs('members.index') ? 'active' : ''}}">
 						<a class="sidebar-link" href="{{route('members.index')}}">
-              <i class="align-middle" data-feather="users"></i> <span class="align-middle">List Members</span>
+              <i class="align-middle" data-feather="users"></i> <span class="align-middle">Members</span>
             </a>
 					</li>
 
@@ -57,15 +57,15 @@
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-              <i class="align-middle" data-feather="list"></i> <span class="align-middle">Management</span>
+					<li class="sidebar-item {{request()->routeIs('coachs.index') ? 'active' : ''}}">
+						<a class="sidebar-link" href="{{ route('coachs.index') }}">
+              <i class="align-middle" data-feather="list"></i> <span class="align-middle">Coachs</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+					<li class="sidebar-item {{request()->routeIs('abonnements.index') ? 'active' : ''}}">
+						<a class="sidebar-link" href="{{ route('abonnements.index') }}">
+              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Abonnements</span>
             </a>
 					</li>
 
@@ -270,8 +270,10 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="{{asset('img/avatars/walid_super.png')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Walid Chahidane</span>
-              </a>
+								@if(Auth::user()->role === 'Admin')
+                				<img src="{{asset(Auth::user()->photo)}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-white">{{Auth::user()->name}}</span>
+								@endif	
+              </a>	
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
@@ -290,27 +292,27 @@
 				@yield('content')
 			</main>
 
-			<footer class="footer">
+			<footer class="footer" >
 				<div class="container-fluid">
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> &copy;
+								<a class="text-muted" href="#" target="_blank"><strong>Gold Gym</strong></a> &copy;
 							</p>
 						</div>
 						<div class="col-6 text-end">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
+									<a class="text-muted" href="#" target="_blank">Support</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
+									<a class="text-muted" href="#" target="_blank">Help Center</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
+									<a class="text-muted" href="#" target="_blank">Privacy</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
+									<a class="text-muted" href="#" target="_blank">Terms</a>
 								</li>
 							</ul>
 						</div>

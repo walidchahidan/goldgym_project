@@ -44,6 +44,7 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
+        
         $validated = $request->validate([
             'email' => 'required|string',
             'password' =>'required'
@@ -59,6 +60,11 @@ class AuthController extends Controller
                 return redirect()->route('welcomehome');
             }
         }
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+            'password' =>'password incorrect',
+        ]);
+        
     }
 
 
@@ -70,6 +76,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

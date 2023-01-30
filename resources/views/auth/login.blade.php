@@ -40,7 +40,7 @@
 						<div class="card-body">
 							<div class="m-sm-4">
 								<div class="text-center">
-									<img src="img/avatars/avatar.jpg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
+									<img src="img/logo/G2.png" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
 								</div>
 								<form method="POST" action="{{route('login')}}">
 									@csrf
@@ -56,10 +56,12 @@
 										@error('password')
                       					<div class="alert alert-danger">{{$message}}</div>
                      					 @enderror
-										<input class="@error('password') is-invalid @enderror form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
+										<input class="@error('password') is-invalid @enderror form-control form-control-lg mb-3" type="password" name="password" placeholder="Enter your password" />
 										<small>
-		<a href="index.html" class="link-primary" >Forgot password?</a>
-	  </small>
+										<a href="{{ route('forget.password.get') }}" class="link-primary " >Forgot password?</a>
+										
+
+	  								</small>
 									</div>
 									<div>
 										<label class="form-check">
