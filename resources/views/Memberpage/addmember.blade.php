@@ -10,7 +10,7 @@
     <div class="content bg-white  mx-5 mb-5 px-0 pt-0 pb-0" id="rl">
         <div class="row">
             
-            <div class="col-4 " >
+            <div class="col-5 " >
                 <img src="{{ asset('img/photos/addphoto.jpg') }}" alt="" width="100%"  class="picside">
             </div>
             <div class="col-6 " >

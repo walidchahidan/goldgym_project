@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Club;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
-class MembersController extends Controller
+class ClubsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class MembersController extends Controller
      */
     public function index()
     {
-        $members = User::all();
-        return view('Memberpage.listmembers',['members'=>$members]);
-        
+        $clubs= DB::table('clubs')->select('*')->get();
+        return view('clubspage.clubs',['clubs'=>$clubs]);
     }
 
     /**
@@ -28,7 +27,8 @@ class MembersController extends Controller
      */
     public function create()
     {
-        return view('Memberpage.addmember');
+        //
+        return view('clubspage.addclub');
     }
 
     /**
@@ -40,33 +40,31 @@ class MembersController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'role' => 'string',
+            'nom' => 'required|string',
+            'adresse' => 'string',
             'telephone' => 'string',
-            'sport' => 'string',
-            'password' => 'required',
+            'email' => 'required|email',
             
         ]);
         
         
-        $validated['password'] = Hash::make($validated['password']);
+        
 
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = 'user_' . time() . '.' . $file->getClientOriginalExtension();
 
-            $path = $request->file('photo')->storeAs('images/members', $fileName, 'public');
+            $path = $request->file('photo')->storeAs('images/clubs', $fileName, 'public');
             $validated['photo'] = 'storage/' . $path;
         }
 
 
         
 
-        $member = User::Create($validated);
+        $club = Club::Create($validated);
 
-        if (isset($member)) {
-            return redirect()->route('members.index')->with('success','Membre ajouté avec succès!');
+        if (isset($club)) {
+            return redirect()->route('clubs.index')->with('success' , 'Club ajouté avec succèes');
         }
 
         return back()->withErrors(['error' => 'User Insertion error']);
@@ -103,39 +101,39 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $oldMember = User::find($id);
+        $oldclub = Club::find($id);
 
         
         $validated = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'role' => 'string',
+            'nom' => 'required|string',
+            'adresse' => 'string',
             'telephone' => 'string',
-            'sport' => 'string'
+            'email' => 'required|email',
         ]);
-        $validated['password']='password';
-        $validated['password'] = Hash::make($validated['password']);
+        
        
 
-        $oldMember->name = $validated['name'];
-        $oldMember->email = $validated['email'];
-        $oldMember->role = $validated['role'];
-        $oldMember->telephone = $validated['telephone'];
-        $oldMember->sport = $validated['sport'];
-        $oldMember->user_id = Auth::user()->id;
+        $oldclub->nom = $validated['nom'];
+        $oldclub->adresse = $validated['adresse'];
+        $oldclub->telephone = $validated['telephone'];
+        $oldclub->email = $validated['email'];
+        
+       
+        
+        $oldclub->user_id = Auth::user()->id;
 
 
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
-            $fileName = 'user_' . time() . '.' . $file->getClientOriginalExtension();
-            $path = $request->file('photo')->storeAs('images/members', $fileName, 'public');
-            $oldMember->photo = 'storage/' . $path;
+            $fileName = 'club_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $request->file('photo')->storeAs('images/clubs', $fileName, 'public');
+            $oldclub->photo = 'storage/' . $path;
         }
 
 
         
-        if ($oldMember->save()) {
-            return redirect()->route('members.index')->with('success','Membre modifié avec succès!');
+        if ($oldclub->save()) {
+            return redirect()->route('clubs.index')->with('success','club modifié avec succès');
         }
 
         return back()->withErrors(['error' => 'User Updating error']);
@@ -149,10 +147,11 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        $member = User::find($id);
+        //
+        $club = Club::find($id);
 
-        if ($member->delete()) {
-            return redirect()->route('members.index')->with('success','Membre supprimé avec succès!');
+        if ($club->delete()) {
+            return redirect()->route('clubs.index')->with('success','club supprimé avec succès');
         } else {
             return back()->withErrors(['error' => 'User Updating error']);
         }

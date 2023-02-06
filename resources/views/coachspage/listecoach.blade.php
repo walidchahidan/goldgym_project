@@ -3,13 +3,17 @@
 
 <head>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {{-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> --}}
 </head>
 
 @section('content')
 <div class="container-fluid p-0">
-
-    <h1 class="h3 mb-3">List des coachs</h1>
+  @if(session('success'))
+  <div class="alert alert-success">
+      {{session('success')}}
+  </div>
+  @endif
+    <h1 class="text-white h3 mb-3">List des coachs</h1>
 
 
     <div class="card-body">
@@ -161,9 +165,11 @@
                                         method="POST">
                                         @csrf
                                         @method('delete')
+                                        @if (Auth::user()->role === 'Admin')
                                         <button type="submit" class="btn btn-sm btn-danger mx-1"> <i
                                                 class="bx bx-trash fs-5"></i>
                                         </button>   
+                                        @endif
                                 </form>
                             </td>
                         </tr>

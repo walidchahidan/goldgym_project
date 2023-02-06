@@ -1,12 +1,16 @@
 @extends('layouts.adminLayout')
 @section('title' , 'Abonnements')
+<head>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
 
 @section('content')
 
 <div class="container">
+    <h3 class="text-white pb-5">List des Abonnements</h3>
     <div class="row d-flex flex-nowrap">
     <div class="col">
-        <h2 class="text-white">Gold</h2>
+        <h2 class="fs-1 fw-bold" style="color: rgb(136, 127, 8)" >Gold </h2>
         <div class="table-responsive">
             
             <table class="table" style="color: wheat">
@@ -40,8 +44,8 @@
             </table>
     </div>
 
-    <div class="col">
-        <h2 class="text-white">Silver</h2>
+    <div class="col mt-5">
+        <h2 class="fs-1 fw-bold" style="color: rgb(156, 153, 146)" >Silver </h2>
         <div class="table-responsive">
             <table class="table" style="color: wheat">
                 

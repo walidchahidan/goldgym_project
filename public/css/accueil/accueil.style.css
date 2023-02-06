@@ -1,0 +1,63 @@
+/* _________________________banner up ___________________________________________ */
+@font-face {
+    font-family: 'coolvetica';
+    src: url('../fonts/coolvetica/coolvetica\ rg.otf');
+}
+@font-face {
+    font-family: "compus";
+    src: url("../../fonts/campus/CAMPUS\ PERSONAL\ USE.ttf");
+}
+.banner{
+    background-image: url('../../img/photos/wallgym.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 120vh;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+h2{
+    font-size: 5em;
+    font-family: "compus" , sans-serif;
+    padding-top: 100px;
+    color: white;
+}
+#paragraphbanner{
+    width: 50%;
+    font-size: 1.1em;
+    margin-top: 60px;
+    color: rgb(223, 206, 206);
+    
+}
+.explorer{
+    text-align: center;
+    margin-top: 110px;
+}
+#ex{
+    color: white;
+    text-decoration: none;
+    font-family: "coolvetika" , sans-serif;
+}
+#chev{
+    color: white;
+    margin-top: 20px;
+    border: solid 1px white;
+    border-radius: 50%;
+    padding:10px;
+    
+}
+/* _________________________________about ___________________________________________ */
+#secabout{
+    height: 70vh;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+#about{
+    
+    font-size: 2em;
+    font-family: "coolvetika" , sans-serif ;
+    text-align: center;
+    margin-top: 150px;
+    
+}

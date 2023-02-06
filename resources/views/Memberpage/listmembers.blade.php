@@ -9,7 +9,12 @@
 
 @section('content')
 <div class="container-fluid p-0" >
-
+  
+  @if(session('success'))
+  <div class="alert alert-success">
+      {{session('success')}}
+  </div>
+  @endif
     <h1 class="h3 mb-3 text-white">List Members</h1>
 
 
@@ -158,9 +163,12 @@
                                         method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-sm btn-danger mx-1"> <i
+                                        @if (Auth::user()->role === 'Admin')
+                                          <button type="submit" class="btn btn-sm btn-danger mx-1"> <i
                                                 class="bx bx-trash fs-5"></i>
-                                        </button>   
+                                        </button>
+                                        @endif
+                                           
                                 </form>
                             </td>
                         </tr>

@@ -1,35 +1,76 @@
-.GG{
-    width: 30%;
-    
-}
-.lists{
-    margin-top: 20px;
-   
-   
-}
-
-.lists>ul{
-    margin-bottom: 16px;
-    list-style-type: none;
-}
-a{
-    color: white;
-    text-decoration: none;
+@font-face {
+    font-family: 'coolvetica';
+    src: url('../fonts/coolvetica/coolvetica\ rg.otf');
 }
 nav{
+    position: sticky;
+    top: 0;
     background-color: black;
-    /* background-image: url('/public/img/photos/gold.jpg'); */
+    padding: 13px;
+    padding-bottom: 10px;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 1.2em;
+    color: white;
+    font-family: "coolvetica" , sans-serif;
+    list-style-type: none;
+    padding-top: 12px;
+}
+.list>li>a{
+    position: relative;
+    color: white;
     
+    text-decoration: none;
 }
-.btns{
-    margin: auto;
-    text-align:end;
+.list>li{
+    transition: width 2s ease-in-out;
 }
-.signupnav{
-    background-color: rgb(175, 150, 6);
-    color: black;
+
+.list>li>a::after{
+   content: "";
+   position: absolute;
+   height: 3px;
+   width: 0;
+   left: 0;
+   bottom: -5px;
+   transition: 0.5s;
+}
+.list>li>a:hover{
+    color: rgb(153, 145, 145);
+}
+.list>li>a:hover:after {
+    
+    width: 100%;
+    background-color: #977E0E;
+}
+
+.dropdown-toggle{
+    background-color: #977E0E;
+    font-family: "coolvetica" , sans-serif;
+    letter-spacing: 3px;
+    color: white;
     border: none;
-}.signinnav{
+}.dropdown-toggle:hover{
     background-color: white;
     color: black;
+}
+.drop{
+   margin: auto;
+   text-align: center;
+   align-items: center;
+   
+}
+.out{
+    font-family: "coolvetica" , sans-serif;
+    color: black;
+    background-color: white;
+    padding: 0;
+    border: solid 3px #977E0E
+    
+}
+.out:hover::after{
+    background-color: #977E0E;
 }

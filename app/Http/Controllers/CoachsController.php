@@ -105,7 +105,7 @@ class CoachsController extends Controller
 
         
         if ($oldcoach->save()) {
-            return redirect()->route('coachs.index');
+            return redirect()->route('coachs.index')->with('success','coach modifié avec succès');
         }
 
         return back()->withErrors(['error' => 'User Updating error']);
@@ -124,7 +124,7 @@ class CoachsController extends Controller
         $coach = User::find($id);
 
         if ($coach->delete()) {
-            return redirect()->route('coachs.index');
+            return redirect()->route('coachs.index')->with('success','coach supprimé avec succès');
         } else {
             return back()->withErrors(['error' => 'User Updating error']);
         }

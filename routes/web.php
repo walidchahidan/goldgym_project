@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AbonnementsController;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\AssistantController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClubsController;
 use App\Http\Controllers\CoachsController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\MembersController;
@@ -33,11 +35,13 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin', [admin::class, 'displayHome'])->name('adminpage.adminhome');
+Route::get('/assistant', [AssistantController::class, 'displayassistant'])->name('assistantpage');
+
 
 Route::resource('/members', MembersController::class);
-
 Route::resource('/coachs' , CoachsController::class);
 Route::resource('/abonnements' ,AbonnementsController::class);
+Route::resource('/clubs' ,ClubsController::class);
  
 
 

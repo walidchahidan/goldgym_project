@@ -18,7 +18,8 @@
 
 	<link href="{{asset('css/app.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <link rel="stylesheet" href="{{asset('css/admin/admin.style.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
@@ -28,11 +29,18 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand pb-0" href="index.html">
           <span class="align-middle " ><img class="w-25" src="{{asset('img/logo/G-removebg.png')}}" alt=""> GoldGym</span>
           
         </a>
+				<div class="text-center">
+					@if (Auth::user()->role === 'Admin' || Auth::user()->role === 'Assistant')
+						<p class=" me-4 fs-5 text-secondary">{{Auth::user()->role}}<i class='bx bxs-circle ms-3 text-success animate__animated animate__flash animate__slower 3s animate__infinite	infinite'></i></p>
+					
+					@endif
+					
 
+				</div>
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
 						Management
@@ -69,55 +77,12 @@
             </a>
 					</li>
 
-					<li class="sidebar-header">
-						Tools & Components
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-buttons.html">
-              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
+					<li class="sidebar-item {{request()->routeIs('clubs.index') ? 'active' : ''}}">
+						<a class="sidebar-link " href="{{ route('clubs.index') }}">
+              <i class="align-middle bx bx-buildings fs-4"></i> <span class="align-middle">Clubs</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms.html">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-cards.html">
-              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-typography.html">
-              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="icons-feather.html">
-              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-            </a>
-					</li>
-
-					<li class="sidebar-header">
-						Plugins & Addons
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts-chartjs.html">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google.html">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-					</li>
 				</ul>
 
 				
@@ -133,7 +98,7 @@
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
 						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+							<a class="nav-icon dropdown-toggle text-white" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
 								<div class="position-relative">
 									<i class="align-middle" data-feather="bell"></i>
 									<span class="indicator">4</span>
@@ -198,7 +163,7 @@
 							</div>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+							<a class="nav-icon dropdown-toggle text-white" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
 								<div class="position-relative">
 									<i class="align-middle" data-feather="message-square"></i>
 								</div>
@@ -269,8 +234,8 @@
                 <i class="align-middle" data-feather="settings"></i>
               </a>
 
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								@if(Auth::user()->role === 'Admin')
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block text-white" href="#" data-bs-toggle="dropdown">
+								@if(Auth::user()->role === 'Admin' || Auth::user()->role === 'Assistant')
                 				<img src="{{asset(Auth::user()->photo)}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-white">{{Auth::user()->name}}</span>
 								@endif	
               </a>	
@@ -292,27 +257,27 @@
 				@yield('content')
 			</main>
 
-			<footer class="footer" >
+			<footer class="footer bg-secondary " >
 				<div class="container-fluid">
-					<div class="row text-muted">
+					<div class="row text-white ">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="#" target="_blank"><strong>Gold Gym</strong></a> &copy;
+								<a class="text-white" href="#" target="_blank"><strong>Gold Gym</strong></a> &copy;
 							</p>
 						</div>
-						<div class="col-6 text-end">
-							<ul class="list-inline">
+						<div class="col-6 text-end ">
+							<ul class="list-inline ">
 								<li class="list-inline-item">
-									<a class="text-muted" href="#" target="_blank">Support</a>
+									<a class="text-white" href="#" target="_blank">Support</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="#" target="_blank">Help Center</a>
+									<a class="text-white" href="#" target="_blank">Help Center</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="#" target="_blank">Privacy</a>
+									<a class="text-white" href="#" target="_blank">Privacy</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="#" target="_blank">Terms</a>
+									<a class="text-white" href="#" target="_blank">Terms</a>
 								</li>
 							</ul>
 						</div>
