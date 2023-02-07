@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'coolvetica';
+    src: url('../fonts/coolvetica/coolvetica\ rg.otf');
+}
+#secabout{
+    height: 100vh;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+#about{
+    
+    font-size: 2em;
+    font-family: 'coolvetica' , sans-serif ;
+    text-align: center;
+    margin-top: 100px;
+    
+}
+.titleabout{
+    margin-top: 40px;
+    font-family: 'coolvetica' , sans-serif;
+}

@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="img/icons/G.png" type="image/x-icon">
-    <link href="{{ asset('css/userlayout.style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/accueil/accueil.style.css') }}">
+    <link href="{{ asset('css/nav.style.css') }}" rel="stylesheet">
+    
+      
+    
 </head>
 <body>
-    <x-nav-component/>
+    
 
     <main>
        @yield('content') 
     </main>
     
 </body>
+
 </html>

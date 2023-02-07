@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/accueil/clubsslider.style.css') }}">
+    {{-- swiper css --}}
+    <link rel="stylesheet" href="{{ asset('css/accueil/swiper-bundle.min.css') }}">
+  
+</head>
+<body>
+    
+<section id="myslidersec">
+<div class="clubstitlediv">
+    <h1 class="titleclubs">Clubs</h1>
+    <P class="paragraphclubs">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit repellat enim eveniet voluptatibus animi neque accusantium possimus quasi architecto cumque dolores non blanditiis officiis eius sunt, magni sapiente recusandae dolorum!</P>
+</div><br>
+
+
+<div class="slide-container swiper">
+    <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+
+                    <div class="card-image">
+                        <img src="{{ asset('img/photos/club1.jpg') }}" alt="" class="card-img">
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h2 class="name">Marina club</h2>
+                    <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                    <button class="button">View More</button>
+                </div>
+            </div>
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+
+                    <div class="card-image">
+                        <img src="{{ asset('img/photos/club2.jpg') }}" alt="" class="card-img">
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h2 class="name">Oulfa Club</h2>
+                    <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                    <button class="button">View More</button>
+                </div>
+            </div>
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+
+                    <div class="card-image">
+                        <img src="{{ asset('img/photos/Club3.jpg') }}" alt="" class="card-img">
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h2 class="name">Medina Club</h2>
+                    <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                    <button class="button">View More</button>
+                </div>
+            </div>
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+
+                    <div class="card-image">
+                        <img src="{{ asset('img/photos/club4.jpg') }}" alt="" class="card-img">
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h2 class="name">Mohammadia Club</h2>
+                    <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                    <button class="button">View More</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+</div>
+           
+</section>
+</body>
+
+
+ {{-- swipper js --}}
+<script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
+
+{{--script file --}}
+<script src="{{ asset('js/script.js') }}"></script> 
+
+</html>

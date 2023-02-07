@@ -7,11 +7,11 @@
         <div class="col-lg-7">
             <ul class="list">
                 <li><a href="{{ route('welcomehome') }}">Accueil</a></li>
-                <li><a href="">Clubs</a></li>
+                <li><a href="#myslidersec">Clubs</a></li>
                 <li><a href="">Activités</a></li>
                 <li><a href="">Abonnements</a></li>
                 <li><a href="">Nutrition</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="#secabout">About</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
                 @endauth
                 @guest
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    JOIN US
+                    REJOIGNEZ NOUS
                    </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="{{route('view.register')}}">Sign up</a></li>

@@ -16,7 +16,7 @@
     padding-top: 50px;
     padding-left: 20px;
 }
-h2{
+#welcometo{
     font-size: 5em;
     font-family: "compus" , sans-serif;
     padding-top: 100px;
@@ -47,17 +47,3 @@ h2{
     
 }
 /* _________________________________about ___________________________________________ */
-#secabout{
-    height: 70vh;
-    width: 70%;
-    text-align: center;
-    margin: auto;
-}
-#about{
-    
-    font-size: 2em;
-    font-family: "coolvetika" , sans-serif ;
-    text-align: center;
-    margin-top: 150px;
-    
-}
