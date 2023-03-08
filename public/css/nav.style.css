@@ -8,6 +8,7 @@ nav{
     background-color: black;
     padding: 13px;
     padding-bottom: 10px;
+    z-index: 10000;
 }
 .list{
     display: flex;

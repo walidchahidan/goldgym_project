@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'photo',
         'role',
-        'sport'
+        'sport',
+        'abonnement_id'
     ];
 
     /**

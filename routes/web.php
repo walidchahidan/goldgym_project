@@ -2,12 +2,16 @@
 
 use App\Http\Controllers\AbonnementsController;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\AffichController;
 use App\Http\Controllers\AssistantController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ClubsController;
 use App\Http\Controllers\CoachsController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\JoinController;
 use App\Http\Controllers\MembersController;
+use App\Http\Controllers\WelcomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +29,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::view('/', "welcome")->name('welcomehome');
+Route::get('/', [ClassController::class , 'show'])->name('welcomehome');
+Route::get('/affichclub/{id}' ,[AffichController::class ,'show'])->name('affichclub');
+
+
 
 Route::get('/register', [AuthController::class, 'displayregister'])->name('view.register');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
@@ -41,9 +48,12 @@ Route::get('/assistant', [AssistantController::class, 'displayassistant'])->name
 Route::resource('/members', MembersController::class);
 Route::resource('/coachs' , CoachsController::class);
 Route::resource('/abonnements' ,AbonnementsController::class);
+Route::resource('/joins' ,JoinController::class);
 Route::resource('/clubs' ,ClubsController::class);
- 
+Route::resource('/classes' ,ClassController::class);
 
+// Route::get('/' ,[WelcomePageController::class , 'index'])->name('welcomehome');
+ 
 
 
 

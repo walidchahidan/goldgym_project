@@ -76,9 +76,12 @@ class ClubsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+        $clubs = Club::all();
+        
+        return view('welcome')->with('clubs', $clubs);
     }
 
     /**
@@ -156,4 +159,6 @@ class ClubsController extends Controller
             return back()->withErrors(['error' => 'User Updating error']);
         }
     }
+
+    
 }

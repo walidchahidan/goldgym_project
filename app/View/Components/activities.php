@@ -4,18 +4,19 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class clubslider extends Component
+class activities extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $clubs;
-    public function __construct($clubs)
+    public $classes;
+    public function __construct($classes)
     {
         //
-        $this->clubs = $clubs;
+        $this->classes = $classes;
+
     }
 
     /**
@@ -25,6 +26,6 @@ class clubslider extends Component
      */
     public function render()
     {
-        return view('components.clubslider');
+        return view('components.activities');
     }
 }

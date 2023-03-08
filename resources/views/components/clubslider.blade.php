@@ -12,16 +12,60 @@
 <body>
     
 <section id="myslidersec">
+<div>
 <div class="clubstitlediv">
     <h1 class="titleclubs">Clubs</h1>
-    <P class="paragraphclubs">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit repellat enim eveniet voluptatibus animi neque accusantium possimus quasi architecto cumque dolores non blanditiis officiis eius sunt, magni sapiente recusandae dolorum!</P>
+    <P class="paragraphclubs text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit repellat enim eveniet voluptatibus animi neque accusantium possimus quasi architecto cumque dolores non blanditiis officiis eius sunt, magni sapiente recusandae dolorum!</P>
 </div><br>
+
 
 
 <div class="slide-container swiper">
     <div class="slide-content">
+        
         <div class="card-wrapper swiper-wrapper">
-            <div class="card swiper-slide">
+            @foreach ($clubs as $club )
+                
+            
+            <div class="card swiper-slide" id="slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+
+                    <div class="card-image">
+                        <img src="{{ $club->photo}}" alt="{{$club->nom}}" class="card-img">
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h2 class="name">{{$club->nom}}</h2>
+                    <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                    
+                    <a class="button" href="{{route('affichclub',$club->id)}}">Infos</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        
+    </div>
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{{-- <div class="slide-container swiper">
+    <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide" id="slide">
                 <div class="image-content">
                     <span class="overlay"></span>
 
@@ -37,7 +81,7 @@
                     <button class="button">View More</button>
                 </div>
             </div>
-            <div class="card swiper-slide">
+            <div class="card swiper-slide" id="slide">
                 <div class="image-content">
                     <span class="overlay"></span>
 
@@ -53,7 +97,7 @@
                     <button class="button">View More</button>
                 </div>
             </div>
-            <div class="card swiper-slide">
+            <div class="card swiper-slide" id="slide">
                 <div class="image-content">
                     <span class="overlay"></span>
 
@@ -69,7 +113,7 @@
                     <button class="button">View More</button>
                 </div>
             </div>
-            <div class="card swiper-slide">
+            <div class="card swiper-slide" id="slide">
                 <div class="image-content">
                     <span class="overlay"></span>
 
@@ -91,8 +135,8 @@
             <div class="swiper-button-next swiper-navBtn"></div>
             <div class="swiper-button-prev swiper-navBtn"></div>
             <div class="swiper-pagination"></div>
-</div>
-           
+</div> --}}
+</div>      
 </section>
 </body>
 

@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Abonnement;
 use App\Models\User;
-use App\View\Components\abonnements;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
-class AbonnementsController extends Controller
+class JoinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +15,7 @@ class AbonnementsController extends Controller
      */
     public function index()
     {
-        // $golds = User::where('abonnement_id','1')->get();
-        $golds = DB::table('users')->where('abonnement_id',1)->get();
-        $silvers = DB::table('users')->where('abonnement_id',2)->get();
-        
-        
-        return view('Abonnementspage.abonnement' , compact('golds','silvers'));
-        // return view('Abonnementspage.abonnement',['golds'=>$golds]);
-        
-        
-      
+        //
     }
 
     /**
@@ -36,8 +25,8 @@ class AbonnementsController extends Controller
      */
     public function create()
     {
-      //
-      
+        //
+        return view('Abonnementspage.add');
     }
 
     /**
@@ -49,6 +38,37 @@ class AbonnementsController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'abonnement_id' => 'required',
+            'telephone' => 'string',
+            'sport' => 'string',
+            'password' => 'required',
+            
+        ]);
+        
+        
+        $validated['password'] = Hash::make($validated['password']);
+
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $fileName = 'user_' . time() . '.' . $file->getClientOriginalExtension();
+
+            $path = $request->file('photo')->storeAs('images/members', $fileName, 'public');
+            $validated['photo'] = 'storage/' . $path;
+        }
+
+
+        
+
+        $member = User::Create($validated);
+
+        if (isset($member)) {
+            return redirect()->route('welcomehome')->with('success','Membre ajouté avec succès!');
+        }
+
+        return back()->withErrors(['error' => 'User Insertion error']);
     }
 
     /**

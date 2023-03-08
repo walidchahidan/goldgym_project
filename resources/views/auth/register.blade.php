@@ -22,7 +22,7 @@
 @section('title', 'Sign Up')
 
 @section('content')
-<x-nav-component/>
+{{-- <x-nav-component/> --}}
 <main class="d-flex w-100">
 	<div class="container d-flex flex-column">
 		<div class="row d-flex justify-content-end">
