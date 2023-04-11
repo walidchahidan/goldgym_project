@@ -3,7 +3,7 @@
     src: url('../fonts/coolvetica/coolvetica\ rg.otf');
 }
 nav{
-    position: sticky;
+    position: sticky !important;
     top: 0;
     background-color: black;
     padding: 13px;
@@ -62,7 +62,7 @@ nav{
    margin: auto;
    text-align: center;
    align-items: center;
-   
+   float: right;
 }
 .out{
     font-family: "coolvetica" , sans-serif;
@@ -74,4 +74,14 @@ nav{
 }
 .out:hover::after{
     background-color: #977E0E;
+}
+
+/* .dropdown-menu{
+    right: 0;
+    
+} */
+.dropdown-menu[data-bs-popper]{
+    left: auto;
+    margin-left: 95px;
+    top: 70%;
 }

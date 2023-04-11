@@ -24,9 +24,10 @@
 }
 #paragraphbanner{
     width: 50%;
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-top: 60px;
     color: rgb(223, 206, 206);
+    font-family: 'coolvetica' , sans-serif;
     
 }
 .explorer{

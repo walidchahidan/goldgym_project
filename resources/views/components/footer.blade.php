@@ -26,12 +26,10 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">
-                Company name
+                GOLD GYM
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Découvrez les plus luxueux clubs de sport et de remise en forme du Maroc avec Gold Gym. Prisé par des célébrités et athlètes de renommée mondiale, chacun de nos cinq clubs dispose de machines High-Tech de dernière génération, dun coaching dexception, dactivités à la pointe du fitness, libérez les potentiels qui sont en vous avec Gold Gym.
               </p>
             </div>
             <!-- Grid column -->
@@ -40,18 +38,18 @@
   
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+              <h6 class="text-uppercase mb-4 font-weight-bold">Clubs</h6>
               <p>
-                <a class="text-white">MDBootstrap</a>
+                <a class="text-white">Marina club</a>
               </p>
               <p>
-                <a class="text-white">MDWordPress</a>
+                <a class="text-white">Medina club</a>
               </p>
               <p>
-                <a class="text-white">BrandFlow</a>
+                <a class="text-white">Mohammadia club</a>
               </p>
               <p>
-                <a class="text-white">Bootstrap Angular</a>
+                <a class="text-white">Oulfa club</a>
               </p>
             </div>
             <!-- Grid column -->
@@ -61,19 +59,25 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">
-                Useful links
+                Activités
               </h6>
               <p>
-                <a class="text-white">Your Account</a>
+                <a class="text-white">Musculation</a>
               </p>
               <p>
-                <a class="text-white">Become an Affiliate</a>
+                <a class="text-white">Crossfit</a>
               </p>
               <p>
-                <a class="text-white">Shipping Rates</a>
+                <a class="text-white">Boxe</a>
               </p>
               <p>
-                <a class="text-white">Help</a>
+                <a class="text-white">Natation</a>
+              </p>
+              <p>
+                <a class="text-white">Aerobic</a>
+              </p>
+              <p>
+                <a class="text-white">Yoga</a>
               </p>
             </div>
   
@@ -83,8 +87,8 @@
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-              <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-              <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+              <p><i class="fas fa-home mr-3"></i>  CASABLANCA , MOROCCO</p>
+              <p><i class="fas fa-envelope mr-3"></i>  goldgym@gmail.com</p>
               <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
               <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
             </div>

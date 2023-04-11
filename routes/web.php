@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ClubsController;
 use App\Http\Controllers\CoachsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\JoinController;
 use App\Http\Controllers\MembersController;
@@ -31,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ClassController::class , 'show'])->name('welcomehome');
 Route::get('/affichclub/{id}' ,[AffichController::class ,'show'])->name('affichclub');
+Route::get('/affichclass/{id}' ,[AffichController::class ,'showclass'])->name('affichclass');
 
 
 
@@ -41,7 +43,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/admin', [admin::class, 'displayHome'])->name('adminpage.adminhome');
+Route::get('/admin', [admin::class, 'displayHome'])->name('adminpage.adminhome')->middleware('auth');
 Route::get('/assistant', [AssistantController::class, 'displayassistant'])->name('assistantpage');
 
 
@@ -52,12 +54,14 @@ Route::resource('/joins' ,JoinController::class);
 Route::resource('/clubs' ,ClubsController::class);
 Route::resource('/classes' ,ClassController::class);
 
+
+Route::post('sendEmailcontact' ,[ContactController::class , 'sendEmail'])->name('sendEmailcontact');
+
+
+
+
+
 // Route::get('/' ,[WelcomePageController::class , 'index'])->name('welcomehome');
- 
-
-
-
-
 // password reset routes
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');

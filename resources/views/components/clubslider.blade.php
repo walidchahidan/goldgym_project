@@ -12,11 +12,12 @@
 <body>
     
 <section id="myslidersec">
-<div>
+<div class="slideall">
 <div class="clubstitlediv">
     <h1 class="titleclubs">Clubs</h1>
-    <P class="paragraphclubs text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit repellat enim eveniet voluptatibus animi neque accusantium possimus quasi architecto cumque dolores non blanditiis officiis eius sunt, magni sapiente recusandae dolorum!</P>
-</div><br>
+    <P class="paragraphclubs text-white">Depuis la zone majestueuse du Morocco Mall jusqu’au magnifique quartier d’affaires de la Marina, découvrez nos prestigieux clubs de remise en forme, de détente et de bien-être, conçus pour répondre aux besoins de chacun. Plus qu’un club de sports, Passage Fitness est un art de vivre.</P>
+</div>
+<br>
 
 
 
@@ -38,7 +39,7 @@
 
                 <div class="card-content">
                     <h2 class="name">{{$club->nom}}</h2>
-                    <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="description">Pour être toujours proche de vous, notre club {{$club->nom}} vous propose de vivre le haut de gamme du fitness en plein coeur de Casablanca. Des installations ultramodernes, les meilleurs entraîneurs de Casablanca et, pour la première fois, une piscine distincte dédiée aux athlètes.</p>
 
                     
                     <a class="button" href="{{route('affichclub',$club->id)}}">Infos</a>

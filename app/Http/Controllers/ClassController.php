@@ -157,5 +157,12 @@ class ClassController extends Controller
     public function destroy($id)
     {
         //
+        $classe = Classe::find($id);
+
+        if ($classe->delete()) {
+            return redirect()->route('clubs.index')->with('success','club supprimé avec succès');
+        } else {
+            return back()->withErrors(['error' => 'User Updating error']);
+        }
     }
 }

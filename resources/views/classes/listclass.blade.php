@@ -47,7 +47,9 @@
                     <td>{{ $classe->date }}</td>
                     <td >
                         <a href="{{route('classes.edit',$classe->id)}}" class="btn btn-success"><i class="bx bx-pencil"></i></a>
-                        <a href="" class="btn btn-danger"><i class="bx bx-trash"></i></a>
+                        @if (Auth::user()->role === 'Admin')
+                            <a href="" class="btn btn-danger"><i class="bx bx-trash"></i></a>
+                        @endif
                     </td>
                 </tr>
                 @endforeach

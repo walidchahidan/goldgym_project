@@ -40,7 +40,7 @@
            
             <div class="col-6 " >
                 <h1 class="mb-5 ms-4 pt-3 pb-0 text-center text-white" id="rejoignernous"> REJOIGNER NOUS</h1>
-                <form method="POST" action="{{ route('joins.store') }}" enctype="multipart/form-data">
+                <form id="frm" method="POST" action="{{ route('joins.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group-lg mb-3">
                         <input type="text" class="form-control mx-4 my-4" id="inputGroupFile01" placeholder="Name" name="name">

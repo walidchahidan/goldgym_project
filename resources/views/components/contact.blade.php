@@ -40,17 +40,19 @@
    
 
 <section id="contactsec">
+   
     <div id="headcontact">
         <h1>Contact Us</h1>
         
     </div>
     <div class="container" id="mycontainer">
         
-            <form action="" id="form" >
-                <input type="text" class="form-control" placeholder="Nom complet">
-                <input type="text" class="form-control" placeholder="Adresse email">
-                <input type="text" class="form-control" placeholder="Téléphone">
-                <textarea class="form-control" name="message" id="" cols="30" rows="10" placeholder="message"></textarea>
+            <form action="{{route('sendEmailcontact')}}" method="POST" enctype="multipart/form-data">
+               @csrf
+                <input type="text" class="form-control" placeholder="Nom complet" name="nom">
+                <input type="text" class="form-control" placeholder="Adresse email" name="email">
+                <input type="text" class="form-control" placeholder="Téléphone" name="telephone">
+                <textarea class="form-control" name="message" id="" cols="30" rows="10" placeholder="message" name="message"></textarea>
 
                 <button type="submit" id="btnenv" class="btn btn-success" >Envoyer</button>
 

@@ -30,12 +30,13 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand pb-0" href="index.html">
-          <span class="align-middle " ><img class="w-25" src="{{asset('img/logo/G-removebg.png')}}" alt=""> GoldGym</span>
+          {{-- <span class="align-middle " ><img class="w-25" src="{{asset('img/logo/G-removebg.png')}}" alt=""> GoldGym</span> --}}
+					<img src="{{asset('img/logo/goldnoir.png')}}" alt="logo" width="200px">
           
         </a>
 				<div class="text-center">
 					@if (Auth::user()->role === 'Admin' || Auth::user()->role === 'Assistant')
-						<p class=" me-4 fs-5 text-secondary">{{Auth::user()->role}}<i class='bx bxs-circle ms-3 text-success animate__animated animate__flash animate__slower 3s animate__infinite	infinite'></i></p>
+						<p class=" me-4 fs-5 mt-2 text-secondary">{{Auth::user()->role}}<i class='bx bxs-circle ms-3 text-success animate__animated animate__flash animate__slower 3s animate__infinite	infinite'></i></p>
 					
 					@endif
 					
@@ -85,7 +86,7 @@
 					
 					<li class="sidebar-item {{request()->routeIs('classes.index') ? 'active' : ''}}">
 						<a class="sidebar-link " href="{{ route('classes.index') }}">
-              <i class="align-middle bx bx-buildings fs-4"></i> <span class="align-middle">Classes</span>
+              <i class="align-middle bx bx-category fs-4"></i> <span class="align-middle">Classes</span>
             </a>
 					</li>
 

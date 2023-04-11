@@ -4,6 +4,7 @@
 <head>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
     
 </head>
 
@@ -20,7 +21,7 @@
 
     <div class="card-body" >
         <div class="table-responsive">
-            <table class="table" style="color: wheat">
+            <table class="table" style="color: wheat" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -180,4 +181,12 @@
         </div>
     </div>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script>
+  let table = new DataTable('#myTable');
+</script>
 @endsection

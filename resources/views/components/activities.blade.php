@@ -50,18 +50,21 @@
 
 
 
-
+<div class="clubstitlediv pt-5">
+    <h1 class="titleclubs">Activités</h1>
+    <P class="paragraphclubs text-white">Découvrir notre différentes activités , de différentes sports et activités selon vos besoin et votre gout.</P>
+</div><br>
 <div class="container pt-5" id="cont">
     
     <div class="row">
         @foreach ($classes as $classe)
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="card" id="card">
                 <img src="{{asset('storage/images/'.$classe->photo)}}" alt="{{$classe->titre}}" style="height: 200px">
                 <div class="card-body" style="height: 250px">
                     <h3>{{$classe->titre}}</h3>
                     <p>{{$classe->description}}</p>
-                    <a href="" class="btn btn-primary" id="btncard">Details</a>
+                    <a href="{{route('affichclass',$classe->id)}}" class="btn btn-primary" id="btncard">Details</a>
                 </div>
             </div>
 
